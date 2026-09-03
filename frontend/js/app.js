@@ -4,91 +4,93 @@
 
 const properties = [
 
-    {
-        id: 1,
-        name: "Maple Student Residence",
-        city: "Ottawa",
-        location: "Downtown Ottawa",
-        price: 750,
-        roomType: "Private",
-        available: true,
-        imageClass: "property-one"
-    },
+{
+    id: 1,
+    name: "Maple Student Residence",
+    city: "Ottawa",
+    location: "Downtown Ottawa",
+    price: 750,
+    roomType: "Private",
+    available: true,
+    imageClass: "property-one"
+},
 
-    {
-        id: 2,
-        name: "Downtown Student House",
-        city: "Toronto",
-        location: "North York, Toronto",
-        price: 900,
-        roomType: "Shared",
-        available: true,
-        imageClass: "property-two"
-    },
+{
+    id: 2,
+    name: "Downtown Student House",
+    city: "Toronto",
+    location: "North York, Toronto",
+    price: 900,
+    roomType: "Shared",
+    available: true,
+    imageClass: "property-two"
+},
 
-    {
-        id: 3,
-        name: "Lakeside Student Living",
-        city: "Mississauga",
-        location: "City Centre, Mississauga",
-        price: 800,
-        roomType: "Private",
-        available: true,
-        imageClass: "property-three"
-    },
+{
+    id: 3,
+    name: "Lakeside Student Living",
+    city: "Mississauga",
+    location: "City Centre, Mississauga",
+    price: 800,
+    roomType: "Private",
+    available: true,
+    imageClass: "property-three"
+},
 
-    {
-        id: 4,
-        name: "University Heights Residence",
-        city: "Toronto",
-        location: "Scarborough, Toronto",
-        price: 850,
-        roomType: "Private",
-        available: true,
-        imageClass: "property-four"
-    },
+{
+    id: 4,
+    name: "University Heights Residence",
+    city: "Toronto",
+    location: "Scarborough, Toronto",
+    price: 850,
+    roomType: "Private",
+    available: true,
+    imageClass: "property-four"
+},
 
-    {
-        id: 5,
-        name: "Capital Student Homes",
-        city: "Ottawa",
-        location: "Centretown, Ottawa",
-        price: 700,
-        roomType: "Shared",
-        available: true,
-        imageClass: "property-one"
-    },
+{
+    id: 5,
+    name: "Capital Student Homes",
+    city: "Ottawa",
+    location: "Centretown, Ottawa",
+    price: 700,
+    roomType: "Shared",
+    available: true,
+    imageClass: "property-one"
+},
 
-    {
-        id: 6,
-        name: "Square One Student Living",
-        city: "Mississauga",
-        location: "Square One, Mississauga",
-        price: 825,
-        roomType: "Shared",
-        available: true,
-        imageClass: "property-three"
-    }
+{
+    id: 6,
+    name: "Square One Student Living",
+    city: "Mississauga",
+    location: "Square One, Mississauga",
+    price: 825,
+    roomType: "Shared",
+    available: true,
+    imageClass: "property-three"
+}
+
 
 ];
-
 
 // =========================
 // GET HTML ELEMENTS
 // =========================
 
 const citySearch =
-    document.getElementById("citySearch");
+document.getElementById("citySearch");
 
 const searchButton =
-    document.getElementById("searchButton");
+document.getElementById("searchButton");
 
 const searchMessage =
-    document.getElementById("searchMessage");
+document.getElementById("searchMessage");
 
 const propertyContainer =
-    document.getElementById("propertyContainer");
+document.getElementById("propertyContainer");
 
+const showAllButton =
+document.getElementById("showAllButton");
 
 // =========================
 // DISPLAY PROPERTIES
@@ -96,185 +98,236 @@ const propertyContainer =
 
 function displayProperties(propertyList) {
 
-    propertyContainer.innerHTML = "";
+propertyContainer.innerHTML = "";
 
 
-    if (propertyList.length === 0) {
+if (propertyList.length === 0) {
 
-        propertyContainer.innerHTML = `
-            <div class="col-12">
+    propertyContainer.innerHTML = `
+        <div class="col-12">
 
-                <div class="alert alert-warning">
-                    No properties found.
-                </div>
-
+            <div class="alert alert-warning">
+                No properties found.
             </div>
-        `;
 
-        return;
-    }
+        </div>
+    `;
+
+    return;
+}
 
 
-    propertyList.forEach(function (property) {
+propertyList.forEach(function (property) {
 
-        const propertyCard = `
+    const propertyCard = `
 
-            <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4">
 
-                <div class="property-card">
+            <div class="property-card">
 
-                    <div
-                        class="property-image ${property.imageClass}">
+                <div
+                    class="property-image ${property.imageClass}">
 
-                        <span class="property-badge">
+                    <span class="property-badge">
 
-                            ${
-                                property.available
+                        ${
+                            property.available
                                 ? "Available"
                                 : "Not Available"
-                            }
+                        }
 
-                        </span>
+                    </span>
 
-                    </div>
-
-
-                    <div class="p-4">
-
-                        <h5 class="fw-bold">
-
-                            ${property.name}
-
-                        </h5>
+                </div>
 
 
-                        <p class="text-muted">
+                <div class="p-4">
 
-                            📍 ${property.location}
-
-                        </p>
-
-
-                        <div
-                            class="d-flex justify-content-between">
-
-                            <div>
-
-                                <small class="text-muted">
-                                    Starting from
-                                </small>
-
-                                <div class="price">
-
-                                    $${property.price}/month
-
-                                </div>
-
-                            </div>
+                    <h5 class="fw-bold">
+                        ${property.name}
+                    </h5>
 
 
-                            <div class="text-end">
+                    <p class="text-muted">
+                        📍 ${property.location}
+                    </p>
 
-                                <small class="text-muted">
-                                    Room
-                                </small>
 
-                                <div>
+                    <div
+                        class="d-flex justify-content-between">
 
-                                    ${property.roomType}
+                        <div>
 
-                                </div>
+                            <small class="text-muted">
+                                Starting from
+                            </small>
 
+                            <div class="price">
+                                $${property.price}/month
                             </div>
 
                         </div>
 
 
-                        <button
-                            class="btn btn-outline-primary w-100 mt-3"
-                            onclick="viewProperty(${property.id})">
+                        <div class="text-end">
 
-                            View Property
+                            <small class="text-muted">
+                                Room
+                            </small>
 
-                        </button>
+                            <div>
+                                ${property.roomType}
+                            </div>
+
+                        </div>
 
                     </div>
+
+
+                    <button
+                        class="btn btn-outline-primary w-100 mt-3"
+                        onclick="viewProperty(${property.id})">
+
+                        View Property
+
+                    </button>
 
                 </div>
 
             </div>
 
-        `;
+        </div>
+
+    `;
 
 
-        propertyContainer.innerHTML += propertyCard;
+    propertyContainer.innerHTML += propertyCard;
+
+});
+
+
+}
+
+// =========================
+// SEARCH PROPERTIES
+// =========================
+
+function searchProperties() {
+
+const city =
+    citySearch.value.trim();
+
+
+// Empty search
+
+if (city === "") {
+
+    searchMessage.textContent =
+        "Please enter a city or location.";
+
+    displayProperties(properties);
+
+    return;
+}
+
+
+// Filter properties
+
+const matchingProperties =
+    properties.filter(function (property) {
+
+        return (
+            property.city.toLowerCase()
+            === city.toLowerCase()
+        );
 
     });
+
+
+// Display message
+
+if (matchingProperties.length === 0) {
+
+    searchMessage.textContent =
+        `No properties found in ${city}.`;
+
+} else {
+
+    searchMessage.textContent =
+        `Found ${matchingProperties.length} properties in ${city}.`;
 
 }
 
 
+// Display results
+
+displayProperties(matchingProperties);
+
+
+// Scroll to properties
+
+document
+    .getElementById("properties")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+
+}
+
 // =========================
-// SEARCH
+// SEARCH BUTTON
 // =========================
 
 searchButton.addEventListener(
-    "click",
-    function () {
-
-        const city =
-            citySearch.value.trim();
-
-
-        if (city === "") {
-
-            searchMessage.textContent =
-                "Please enter a city or location.";
-
-            displayProperties(properties);
-
-            return;
-        }
-
-
-        const matchingProperties =
-            properties.filter(function (property) {
-
-                return (
-                    property.city.toLowerCase()
-                    === city.toLowerCase()
-                );
-
-            });
-
-
-        if (matchingProperties.length === 0) {
-
-            searchMessage.textContent =
-                `No properties found in ${city}.`;
-
-        } else {
-
-            searchMessage.textContent =
-                `Found ${matchingProperties.length} properties in ${city}.`;
-
-        }
-
-
-        displayProperties(matchingProperties);
-
-
-        // Scroll to properties
-
-        document
-            .getElementById("properties")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    }
+"click",
+searchProperties
 );
 
+// =========================
+// ENTER KEY SEARCH
+// =========================
+
+citySearch.addEventListener(
+"keydown",
+function (event) {
+
+    if (event.key === "Enter") {
+
+        searchProperties();
+
+    }
+
+}
+
+
+);
+
+// =========================
+// SHOW ALL PROPERTIES
+// =========================
+
+showAllButton.addEventListener(
+"click",
+function () {
+
+    citySearch.value = "";
+
+    searchMessage.textContent =
+        "Showing all available properties.";
+
+    displayProperties(properties);
+
+    document
+        .getElementById("properties")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+);
 
 // =========================
 // VIEW PROPERTY
@@ -282,57 +335,62 @@ searchButton.addEventListener(
 
 function viewProperty(propertyId) {
 
-    const property =
-        properties.find(function (property) {
+const property =
+    properties.find(function (property) {
 
-            return property.id === propertyId;
+        return property.id === propertyId;
 
-        });
-
-
-    if (!property) {
-        return;
-    }
+    });
 
 
-    alert(
-        `${property.name}\n\n` +
-        `Location: ${property.location}\n` +
-        `Price: $${property.price}/month\n` +
-        `Room: ${property.roomType}`
-    );
-
+if (!property) {
+    return;
 }
 
+
+alert(
+    `${property.name}\n\n` +
+    `Location: ${property.location}\n` +
+    `City: ${property.city}\n` +
+    `Price: $${property.price}/month\n` +
+    `Room: ${property.roomType}\n` +
+    `Availability: ${
+        property.available
+            ? "Available"
+            : "Not Available"
+    }`
+);
+
+
+}
 
 // =========================
 // CITY CARD CLICK
 // =========================
 
 const cityCards =
-    document.querySelectorAll(".city-card");
-
+document.querySelectorAll(".city-card");
 
 cityCards.forEach(function (card) {
 
-    card.addEventListener(
-        "click",
-        function () {
+card.addEventListener(
+    "click",
+    function () {
 
-            const city =
-                card.dataset.city;
-
-
-            citySearch.value = city;
+        const city =
+            card.dataset.city;
 
 
-            searchButton.click();
+        citySearch.value = city;
 
-        }
-    );
+
+        searchProperties();
+
+    }
+);
+
 
 });
-
 
 // =========================
 // INITIAL PAGE LOAD
