@@ -1,0 +1,53 @@
+name: CI - PG Life
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+
+  validate:
+    name: Validate Website
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        shell: bash
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f js/app.js
+
+          echo "All required files exist."
+
+      - name: Check HTML references
+        shell: bash
+        run: |
+          grep -q 'css/style.css' index.html
+          grep -q 'js/app.js' index.html
+
+          echo "HTML file references are correct."
+
+      - name: Check HTML structure
+        shell: bash
+        run: |
+          grep -qi '<!DOCTYPE html>' index.html
+          grep -qi '<html' index.html
+          grep -qi '</html>' index.html
+
+          echo "Basic HTML checks passed."
+
+      - name: CI completed
+        run: echo "PG Life CI checks passed successfully."
