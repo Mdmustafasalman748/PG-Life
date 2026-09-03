@@ -1,0 +1,327 @@
+/* =========================
+   GENERAL
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar-brand {
+    font-size: 1.6rem;
+}
+
+.nav-link {
+    margin-left: 15px;
+    color: #374151;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    padding: 100px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #ffffff
+        );
+}
+
+.hero-label,
+.section-label {
+    color: #2563eb;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.hero-section h1 {
+    max-width: 700px;
+}
+
+.highlight {
+    color: #2563eb;
+}
+
+.hero-section .lead {
+    max-width: 650px;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    max-width: 650px;
+
+    background-color: white;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.08);
+}
+
+.search-box input {
+    border-radius: 8px;
+}
+
+.search-box button {
+    border-radius: 8px;
+}
+
+#searchMessage {
+    min-height: 24px;
+}
+
+
+/* =========================
+   CITY CARDS
+========================= */
+
+.city-card {
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+.city-image {
+    height: 180px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 20px;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+}
+
+.ottawa {
+    background:
+        linear-gradient(
+            135deg,
+            #1e3a8a,
+            #3b82f6
+        );
+}
+
+.toronto {
+    background:
+        linear-gradient(
+            135deg,
+            #7c2d12,
+            #ea580c
+        );
+}
+
+.mississauga {
+    background:
+        linear-gradient(
+            135deg,
+            #14532d,
+            #22c55e
+        );
+}
+
+
+/* =========================
+   FEATURED SECTION
+========================= */
+
+.featured-section {
+    background-color: #f9fafb;
+}
+
+
+/* =========================
+   PROPERTY CARD
+========================= */
+
+.property-card {
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.08);
+}
+
+.property-image {
+    height: 220px;
+
+    position: relative;
+}
+
+.property-one {
+    background:
+        linear-gradient(
+            135deg,
+            #334155,
+            #64748b
+        );
+}
+
+.property-two {
+    background:
+        linear-gradient(
+            135deg,
+            #312e81,
+            #6366f1
+        );
+}
+
+.property-three {
+    background:
+        linear-gradient(
+            135deg,
+            #134e4a,
+            #14b8a6
+        );
+}
+
+.property-four {
+    background:
+        linear-gradient(
+            135deg,
+            #581c87,
+            #a855f7
+        );
+}
+
+.property-badge {
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    background-color: white;
+
+    color: #15803d;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+    color: #2563eb;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background-color: #111827;
+
+    color: #d1d5db;
+
+    padding: 40px 0;
+}
+
+.footer h5 {
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 70px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .city-image {
+        height: 150px;
+    }
+
+    .property-image {
+        height: 180px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
+
+}
