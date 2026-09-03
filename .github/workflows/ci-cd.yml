@@ -13,13 +13,11 @@ permissions:
   contents: read
 
 jobs:
-
   validate:
     name: Validate Website
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -29,7 +27,6 @@ jobs:
           test -f frontend/index.html
           test -f frontend/css/style.css
           test -f frontend/js/app.js
-
           echo "All required files exist."
 
       - name: Check HTML references
@@ -37,7 +34,6 @@ jobs:
         run: |
           grep -q 'css/style.css' frontend/index.html
           grep -q 'js/app.js' frontend/index.html
-
           echo "HTML file references are correct."
 
       - name: Check HTML structure
@@ -46,61 +42,7 @@ jobs:
           grep -qi '<!DOCTYPE html>' frontend/index.html
           grep -qi '<html' frontend/index.html
           grep -qi '</html>' frontend/index.html
-
           echo "Basic HTML checks passed."
 
       - name: CI completed
         run: echo "PG Life CI checks passed successfully."
-
-Then run these commands
-
-Save the file and execute:
-
-git add .github/workflows/ci-cd.yml
-git commit -m "Fix CI paths for frontend"
-git push
-
-
-GitHub Actions will start a new workflow automatically.
-
-Why your current workflow fails
-
-This line:
-
-test -f index.html
-
-
-means:
-
-"Does index.html exist in the root directory of the GitHub repository?"
-
-But GitHub sees:
-
-PG-Life/
-└── frontend/
-    └── index.html
-
-
-Therefore:
-
-test -f index.html
-
-
-returns false → exit code 1.
-
-The corrected command:
-
-test -f frontend/index.html
-
-
-points to the actual file.
-
-The same applies to your CSS and JavaScript files.
-
-One more important point: your HTML reference checks are already correct if your frontend/index.html contains:
-
-<link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
-
-
-Those paths should remain css/style.css and js/app.js because they are relative to frontend/index.html. You should not change them to frontend/css/style.css inside the HTML.
