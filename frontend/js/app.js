@@ -101,6 +101,8 @@ function displayProperties(propertyList) {
 propertyContainer.innerHTML = "";
 
 
+// No properties found
+
 if (propertyList.length === 0) {
 
     propertyContainer.innerHTML = `
@@ -116,6 +118,8 @@ if (propertyList.length === 0) {
     return;
 }
 
+
+// Display each property
 
 propertyList.forEach(function (property) {
 

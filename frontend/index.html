@@ -1,5 +1,7 @@
 <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
 <title>PG Life - Student Housing</title>
 
@@ -8,12 +10,12 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet">
 
-<!-- Custom CSS -->
+<!-- Our Custom CSS -->
 <link rel="stylesheet" href="css/style.css">
 
 </head> <body>
 <!-- =========================
-     NAVIGATION
+     NAVIGATION BAR
 ========================== -->
 
 <nav class="navbar navbar-expand-lg bg-white shadow-sm">
@@ -69,14 +71,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="#">
-                        Login
-                    </a>
-                </li>
-
             </ul>
 
         </div>
@@ -96,7 +90,7 @@
 
         <div class="row align-items-center">
 
-            <div class="col-lg-8">
+            <div class="col-lg-7">
 
                 <p class="hero-label">
                     STUDENT ACCOMMODATION
@@ -119,7 +113,7 @@
                 </p>
 
 
-                <!-- SEARCH BOX -->
+                <!-- Search Box -->
 
                 <div class="search-box mt-4">
 
@@ -132,7 +126,7 @@
                                 id="citySearch"
                                 class="form-control form-control-lg"
                                 placeholder="Enter city or location"
-                                autocomplete="off">
+                                aria-label="Enter city or location">
 
                         </div>
 
@@ -149,6 +143,9 @@
                         </div>
 
                     </div>
+
+
+                    <!-- JavaScript message -->
 
                     <p
                         id="searchMessage"
@@ -193,7 +190,7 @@
 
         <div class="row g-4">
 
-            <!-- OTTAWA -->
+            <!-- Ottawa -->
 
             <div class="col-md-4">
 
@@ -226,7 +223,7 @@
             </div>
 
 
-            <!-- TORONTO -->
+            <!-- Toronto -->
 
             <div class="col-md-4">
 
@@ -259,7 +256,7 @@
             </div>
 
 
-            <!-- MISSISSAUGA -->
+            <!-- Mississauga -->
 
             <div class="col-md-4">
 
@@ -299,7 +296,7 @@
 
 
 <!-- =========================
-     PROPERTIES
+     FEATURED PROPERTIES
 ========================== -->
 
 <section
@@ -309,40 +306,42 @@
     <div class="container">
 
         <div
-            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+            class="d-flex justify-content-between align-items-end mb-4">
 
             <div>
 
                 <p class="section-label">
-                    PROPERTIES
+                    FEATURED
                 </p>
 
                 <h2 class="fw-bold mb-1">
-                    Available Properties
+                    Featured Properties
                 </h2>
 
                 <p class="text-muted mb-0">
-                    Find a comfortable place to stay.
+                    Popular places students are looking at.
                 </p>
 
             </div>
 
             <button
+                type="button"
                 id="showAllButton"
-                class="btn btn-outline-primary mt-3 mt-md-0">
+                class="btn btn-link view-all">
 
-                Show All Properties
+                View all →
 
             </button>
 
         </div>
 
 
-        <!-- PROPERTY CARDS WILL BE INSERTED HERE -->
+        <!-- JavaScript will insert properties here -->
 
         <div
             id="propertyContainer"
             class="row g-4">
+
         </div>
 
     </div>
@@ -351,7 +350,7 @@
 
 
 <!-- =========================
-     ABOUT
+     ABOUT SECTION
 ========================== -->
 
 <section
@@ -369,14 +368,14 @@
                 </p>
 
                 <h2 class="fw-bold">
-                    Student housing made simple.
+                    Student accommodation made simple.
                 </h2>
 
                 <p class="text-muted mt-3">
 
-                    PG Life helps students discover affordable,
-                    comfortable and convenient accommodation
-                    in popular cities.
+                    PG Life helps students discover comfortable,
+                    convenient and affordable accommodation near
+                    their college or workplace.
 
                 </p>
 
@@ -391,8 +390,10 @@
                     </h5>
 
                     <p class="text-muted mb-0">
-                        Simple search, useful property information
-                        and student-friendly accommodation.
+
+                        Search different locations and find
+                        accommodation that fits your needs and budget.
+
                     </p>
 
                 </div>
@@ -446,17 +447,17 @@
 
 
 <!-- =========================
-     BOOTSTRAP JAVASCRIPT
+     JAVASCRIPT
 ========================== -->
+
+<!-- Bootstrap JavaScript -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
-<!-- =========================
-     CUSTOM JAVASCRIPT
-========================== -->
+<!-- Our JavaScript -->
 
 <script src="js/app.js"></script>
 

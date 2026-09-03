@@ -328,6 +328,32 @@ border: 1px solid #dbeafe;
 }
 
 /* =========================
+VIEW ALL BUTTON
+========================= */
+
+.view-all {
+color: #2563eb;
+
+font-weight: 600;
+
+border: none;
+
+padding: 0;
+
+text-decoration: none;
+
+
+}
+
+.view-all:hover {
+color: #1d4ed8;
+
+text-decoration: underline;
+
+
+}
+
+/* =========================
 FOOTER
 ========================= */
 
